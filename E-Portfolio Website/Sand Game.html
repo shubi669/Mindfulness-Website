@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+  <title>Falling Sand Simulation</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+      margin: 0 auto;
+
+    }
+  </style>
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+    <div class="sidebar" id="sidebar">
+        <img src="Walnut Background.jpg" alt="Profile">
+        <a href="Mindfulness website.html">Home</a>
+        <a href="Stress Basics.html">Stress Basics</a>
+        <a href="Stress Relief Techniques.html">Stress Relief Techniques</a>
+        <a href="Academic Stress.html">Academic Stress</a>
+        <a href="LTSM.html">Long-Term Stress Management</a>
+        <button class="dropdown-btn" onclick="toggleDropdown()">More ▼</button>
+        <div class="dropdown" id="dropdownMenu">
+            <a href="Bubble popper.html">Bubble Popper Game</a>
+            <a href="Sand Game.html">Sand Game</a>
+            <a href="Chatbot.html">AI Chatbot</a>
+            <a href="Task Organizer.html">Task Organizer</a>
+            <a href="guided-meditations.html">Guided Meditations</a>
+        </div>
+    </div>
+  <canvas id="sandCanvas"></canvas>
+
+  <script>
+    const canvas = document.getElementById("sandCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // Set canvas size
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Create grid for sand simulation
+    const cols = Math.floor(canvas.width / 5);
+    const rows = Math.floor(canvas.height / 5);
+    const grid = Array(cols).fill().map(() => Array(rows).fill(null));
+
+    // Colors and Sand Properties
+    const SAND_COLOR = '#4CAF50'; // Green color for sand particles
+    const GRAVITY = 1;
+
+    // Draw the grid and sand particles
+    function drawGrid() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let x = 0; x < cols; x++) {
+        for (let y = 0; y < rows; y++) {
+          if (grid[x][y] !== null) {
+            ctx.fillStyle = SAND_COLOR;
+            ctx.fillRect(x * 5, y * 5, 5, 5);
+          }
+        }
+      }
+    }
+
+    // Apply gravity to simulate the falling sand
+    function updateSand() {
+      for (let x = 0; x < cols; x++) {
+        for (let y = rows - 2; y >= 0; y--) {
+          if (grid[x][y] !== null && grid[x][y + 1] === null) {
+            grid[x][y + 1] = grid[x][y];
+            grid[x][y] = null;
+          }
+        }
+      }
+    }
+
+    // Update the sand particles to follow the mouse
+    canvas.addEventListener("mousemove", function (e) {
+      const x = Math.floor(e.offsetX / 5);
+      const y = Math.floor(e.offsetY / 5);
+      if (y > 0 && grid[x][y - 1] === null) {
+        grid[x][y - 1] = 'sand';
+      }
+    });
+
+    // Main animation loop
+    function animate() {
+      updateSand();
+      drawGrid();
+      requestAnimationFrame(animate);
+    }
+
+    // Start the simulation
+    animate();
+  </script>
+</body>
+</html>

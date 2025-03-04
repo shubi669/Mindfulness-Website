@@ -1,0 +1,481 @@
+/* General Styling */
+body{
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background-color: #DCC5A7;
+    color: #5A3E36;
+    line-height: 1.6;
+   
+}
+/* Hero Section */
+.hero {
+    background-image: url('dennis-yu-f4ubngNmhZ8-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    border-bottom: #ad8367 50px solid;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FAF3E0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+   
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    margin-top: 20px;
+    color: #FAF3E0;
+    font-family: sans-serif;
+}
+
+/* Features Section */
+.features {
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    text-align: center;
+}
+
+.feature {
+    background-color: #DCC5A7;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    background-color: #C5B8A5;
+}
+
+.feature h3 {
+    color: #5A3E36;
+    margin-bottom: 1rem;
+}
+
+/* Call-to-Action Section */
+.cta {
+    background-color: #8C6449;
+    color: #FAF3E0;
+    padding: 2rem;
+    text-align: center;
+}
+
+.cta button {
+    background-color: #5A3E36;
+    color: #FAF3E0;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta button:hover {
+    background-color: #403028;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 2rem;
+    background-color: #FAF3E0;
+    text-align: center;
+}
+
+.testimonial {
+    margin: 1rem auto;
+    max-width: 600px;
+    font-style: italic;
+    color: #5A3E36;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+/* Update split section and its children */
+.split-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    background-color: #DCC5A7;
+    gap: 40px;
+    max-width: 1200px;  /* Add max-width to control overall width */
+    margin: 0 auto;     /* Center the section */
+}
+
+.left-content {
+    flex: 0.45;  /* Decreased from 0.5 to 0.45 to make text section slightly smaller */
+    padding: 20px;
+}
+
+/* Text Styling */
+.left-content h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.left-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Image Styling */
+.right-image {
+    flex: 0.55;  /* Increased from 0.5 to 0.55 to make image section slightly larger */
+    padding: 15px;
+    background: #FAF3E0;
+    border: 2px solid #8C6449;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    position: relative;
+}
+
+.right-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.right-image img:hover {
+    transform: scale(1.02);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #45a049;
+}
+
+.quote-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+
+.quote-section blockquote {
+    font-size: 1.8rem;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.quote-section cite {
+    color: #666;
+}
+
+/* Footer */
+footer {
+    background-color: #5A3E36;
+    color: #FAF3E0;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #C5B8A5;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .split-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .right-image {
+        margin-top: 20px;
+    }
+}
+
+.sidebar {
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: #DCC5A7;
+    transition: 0.3s;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    
+}
+.sidebar img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+}
+.sidebar a {
+    padding: 15px 20px;
+    text-decoration: black;
+    font-size: 18px;
+    color: black;
+    display: block;
+    transition: 0.2s;
+}
+.sidebar a:hover {
+    background-color: #ffffff;
+    border-left: 10px solid #004119;
+}
+.dropdown {
+    display: none;
+    background-color: #DCC5A7;
+    padding-left: 20px;
+   
+}
+.dropdown a {
+    font-size: 16px;
+}
+.dropdown-btn {
+    cursor: pointer;
+    padding: 15px ;
+    color: black;
+    font-size: 18px;
+    display: block;
+    background: none;
+    border: none;
+    text-align: left;
+    width: 100%;
+    transition: 0.2s;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.dropdown-btn:hover {
+    background-color: #ffffff;
+    border-left: 4px solid #d28014;
+    
+}
+.toggle-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 20px;
+    background-color: #222;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.toggle-btn:hover {
+    background-color: #A3C585;
+    scale: 1.1;
+}
+
+/* Add this new style for the divider */
+.section-divider {
+    width: 90%;
+    margin: 50px auto;
+    border: none;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #5A3E36, #8C6449, #5A3E36, transparent);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.organizer-section {
+    max-width: 600px;
+    margin: 30px auto;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.organizer-section h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Task Input Area */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task-input {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.task-input input[type="text"],
+.task-input input[type="time"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.task-input button {
+    padding: 10px 20px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.task-input button:hover {
+    background: #218838;
+}
+
+/* Task List */
+#taskList {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#taskList .task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+#taskList .task:hover {
+    background: #e9ecef;
+}
+
+#taskList .task span {
+    flex: 1;
+    font-size: 16px;
+}
+
+#taskList .task .task-time {
+    font-size: 14px;
+    color: #6c757d;
+    margin-left: 10px;
+}
+
+#taskList .task .deleteBtn {
+    padding: 5px 10px;
+    font-size: 14px;
+    color: white;
+    background: #dc3545;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#taskList .task .deleteBtn:hover {
+    background: #c82333;
+}
+
+/* Mark Task as Done */
+#taskList .task.done span {
+    text-decoration: line-through;
+    color: #6c757d;
+}
+
+
+footer a {
+    color: #ffc107;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons in General */
+button {
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Photo Credit Styling */
+.photo-credit {
+    position: absolute;
+    bottom: 10px;
+    font-size: 12px;
+    color: #666;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.right-image .photo-credit {
+    right: 25px;  /* For images on the right */
+}
+
+.left-image .photo-credit {
+    left: 25px;   /* For images on the left */
+}

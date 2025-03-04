@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Organizer</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <script src="script.js"></script>
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+    <div class="sidebar" id="sidebar">
+        <img src="Walnut Background.jpg" alt="Profile">
+        <a href="Mindfulness website.html">Home</a>
+        <a href="Stress Basics.html">Stress Basics</a>
+        <a href="Stress Relief Techniques.html">Stress Relief Techniques</a>
+        <a href="Academic Stress.html">Academic Stress</a>
+        <a href="LTSM.html">Long-Term Stress Management</a>
+        <button class="dropdown-btn" onclick="toggleDropdown()">More ▼</button>
+        <div class="dropdown" id="dropdownMenu">
+            <a href="Bubble popper.html">Bubble Popper Game</a>
+            <a href="Sand Game.html">Sand Game</a>
+            <a href="Chatbot.html">AI Chatbot</a>
+            <a href="Task Organizer.html">Task Organizer</a>
+            <a href="guided-meditations.html">Guided Meditations</a>
+        </div>
+    </div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Task Organizer</h1>
+            <p class="hero-subtitle">Manage Your Time Effectively</p>
+            <p class="hero-description">Tools and strategies for better task management</p>
+        </div>
+    </header>
+        
+    <section id="organizer" class="organizer-section">
+        <h2>Your Task Organizer</h2>
+        <div class="container">
+            <div class="task-input">
+                <input type="text" id="taskInput" placeholder="Add a new task...">
+                <input type="time" id="timeInput" placeholder="Set time">
+                <button id="addTaskBtn">Add Task</button>
+            </div>
+            <ul id="taskList">
+                <!-- Tasks will appear here -->
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 CalmHaven. All Rights Reserved. | <a href="About.html">About</a> | <a href="Sources.html">Sources</a> | </p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

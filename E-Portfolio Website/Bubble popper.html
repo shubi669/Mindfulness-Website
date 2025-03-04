@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <title>Bubble Wrap Popper</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #DCC5A7;
+        }
+        .bubble-wrap {
+            display: grid;
+            grid-template-columns: repeat(10, 50px);
+            gap: 5px;
+        }
+        .bubble {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 50%;
+            border: 2px solid gray;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .popped {
+            background-color: lightgray;
+            transform: scale(0.9);
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+    <div class="sidebar" id="sidebar">
+        <img src="Walnut Background.jpg" alt="Profile">
+        <a href="Mindfulness website.html">Home</a>
+        <a href="Stress Basics.html">Stress Basics</a>
+        <a href="Stress Relief Techniques.html">Stress Relief Techniques</a>
+        <a href="Academic Stress.html">Academic Stress</a>
+        <a href="LTSM.html">Long-Term Stress Management</a>
+        <button class="dropdown-btn" onclick="toggleDropdown()">More ▼</button>
+        <div class="dropdown" id="dropdownMenu">
+            <a href="Bubble popper.html">Bubble Popper Game</a>
+            <a href="Chatbot.html">AI Chatbot</a>
+            <a href="Task Organizer.html">Task Organizer</a>
+            <a href="guided-meditations.html">Guided Meditations</a>
+        </div>
+    </div>
+    
+    
+    <div class="bubble-wrap" id="bubbleWrap"></div>
+    <audio id="popSound1" src="bubble-pop-283674.mp3"></audio>
+    <audio id="popSound2" src="bubble-sound-43207.mp3"></audio>
+    <audio id="popSound3" src="bubble-pop-2-293341.mp3"></audio>
+    <audio id="popSound4" src="bubble-pop-100784.mp3"></audio>
+    <script>
+        const bubbleWrap = document.getElementById("bubbleWrap");
+        const popSounds = [
+            document.getElementById("popSound1"),
+            document.getElementById("popSound2"),
+            document.getElementById("popSound3"),
+            document.getElementById("popSound4")
+        ];
+
+        function createBubbles() {
+            for (let i = 0; i < 50; i++) {
+                let bubble = document.createElement("div");
+                bubble.classList.add("bubble");
+                bubble.addEventListener("click", function() {
+                    if (!bubble.classList.contains("popped")) {
+                        bubble.classList.add("popped");
+
+                        // Randomly select a sound and play it
+                        let randomSound = popSounds[Math.floor(Math.random() * popSounds.length)];
+                        randomSound.currentTime = 0;
+                        randomSound.play();
+                    }
+                });
+                bubbleWrap.appendChild(bubble);
+            }
+        }
+        createBubbles();
+    </script>
+</body>
+</html>
